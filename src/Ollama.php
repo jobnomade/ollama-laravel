@@ -354,10 +354,10 @@ class Ollama {
     /**
      * Generates content using the specified model.
      *
-     * @return array|Response
+     * @return null|array|Response
      * @throws GuzzleException
      */
-    public function ask(): array|Response
+    public function ask(): null|array|Response
     {
         $requestData = [
             'model' => $this->model,
@@ -386,10 +386,10 @@ class Ollama {
      * Generates a chat completion using the specified model and conversation.
      *
      * @param array $conversation
-     * @return array|Response
+     * @return null|array|Response
      * @throws GuzzleException
      */
-    public function chat(array $conversation): array|Response
+    public function chat(array $conversation): null|array|Response
     {
         return $this->sendRequest('/api/chat', [
             'model' => $this->model,
